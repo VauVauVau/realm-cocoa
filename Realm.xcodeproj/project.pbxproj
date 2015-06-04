@@ -179,6 +179,12 @@
 		3F8DCA7319930F960008BD7F /* RealmTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = E81A1FC31955FE0100FDED82 /* RealmTests.mm */; };
 		3F8DCA81199310D40008BD7F /* RLMTestObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = E81A1FC71955FE0100FDED82 /* RLMTestObjects.m */; };
 		3FBAC0601AE708DC009DC2AA /* KVOTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3F403E2D1ABB8987002F807A /* KVOTests.mm */; };
+		3FC1F3D81B20C003009C92E3 /* RLMNotification.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3FC1F3D61B20C003009C92E3 /* RLMNotification.hpp */; };
+		3FC1F3D91B20C003009C92E3 /* RLMNotification.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3FC1F3D61B20C003009C92E3 /* RLMNotification.hpp */; };
+		3FC1F3DA1B20C003009C92E3 /* RLMNotification.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3FC1F3D61B20C003009C92E3 /* RLMNotification.hpp */; };
+		3FC1F3DB1B20C003009C92E3 /* RLMNotification.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3FC1F3D71B20C003009C92E3 /* RLMNotification.mm */; };
+		3FC1F3DC1B20C003009C92E3 /* RLMNotification.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3FC1F3D71B20C003009C92E3 /* RLMNotification.mm */; };
+		3FC1F3DD1B20C003009C92E3 /* RLMNotification.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3FC1F3D71B20C003009C92E3 /* RLMNotification.mm */; };
 		3FDCFEB619F6A8D3005E414A /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88C36FF19745E5500C9963D /* RLMSupport.swift */; };
 		3FDE338C19C37E4C003B7DBA /* RLMSwiftSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F452EC519C2279800AFC154 /* RLMSwiftSupport.m */; };
 		3FDE338D19C39A87003B7DBA /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88C36FF19745E5500C9963D /* RLMSupport.swift */; };
@@ -420,6 +426,8 @@
 		3F452EC519C2279800AFC154 /* RLMSwiftSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RLMSwiftSupport.m; path = Realm/RLMSwiftSupport.m; sourceTree = SOURCE_ROOT; };
 		3F6B89AE19EF40BA004E8EA8 /* librealm-ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "librealm-ios.a"; path = "../core/librealm-ios.a"; sourceTree = "<group>"; };
 		3F8DCA5719930F550008BD7F /* iOS Device Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS Device Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FC1F3D61B20C003009C92E3 /* RLMNotification.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = RLMNotification.hpp; sourceTree = "<group>"; };
+		3FC1F3D71B20C003009C92E3 /* RLMNotification.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RLMNotification.mm; sourceTree = "<group>"; };
 		3FE79FF719BA6A5900780C9A /* RLMSwiftSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLMSwiftSupport.h; sourceTree = "<group>"; };
 		C0D6E4101AFBFAF7001F3027 /* RLMAssertions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLMAssertions.h; sourceTree = "<group>"; };
 		E81A1F621955FC9300FDED82 /* Realm-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Realm-Info.plist"; sourceTree = "<group>"; };
@@ -676,6 +684,8 @@
 				0207AB7D195DF9FB007EFB12 /* RLMMigration.h */,
 				0207AB7E195DF9FB007EFB12 /* RLMMigration.mm */,
 				0207AB7C195DF9FB007EFB12 /* RLMMigration_Private.h */,
+				3FC1F3D61B20C003009C92E3 /* RLMNotification.hpp */,
+				3FC1F3D71B20C003009C92E3 /* RLMNotification.mm */,
 				E81A1F6E1955FC9300FDED82 /* RLMObject.h */,
 				E81A1F6F1955FC9300FDED82 /* RLMObject.mm */,
 				E81A1F6D1955FC9300FDED82 /* RLMObject_Private.h */,
@@ -764,6 +774,7 @@
 				29E3C72C1A71C1C700B62C1D /* RLMListBase.h in Headers */,
 				29E3C7221A71C1C700B62C1D /* RLMMigration.h in Headers */,
 				29E3C7231A71C1C700B62C1D /* RLMMigration_Private.h in Headers */,
+				3FC1F3DA1B20C003009C92E3 /* RLMNotification.hpp in Headers */,
 				29E3C7241A71C1C700B62C1D /* RLMObject.h in Headers */,
 				29E3C72B1A71C1C700B62C1D /* RLMObject_Private.h in Headers */,
 				3F171CB21AF0579C00986326 /* RLMObject_Private.hpp in Headers */,
@@ -803,6 +814,7 @@
 				023B195A1A3BA90D0067FB81 /* RLMListBase.h in Headers */,
 				0207AB82195DF9FB007EFB12 /* RLMMigration.h in Headers */,
 				0207AB80195DF9FB007EFB12 /* RLMMigration_Private.h in Headers */,
+				3FC1F3D91B20C003009C92E3 /* RLMNotification.hpp in Headers */,
 				E856D1FD1956154C00FB2FCF /* RLMObject.h in Headers */,
 				29EDB8DD1A7705EA00458D80 /* RLMObject_Private.h in Headers */,
 				3F171CB11AF0579C00986326 /* RLMObject_Private.hpp in Headers */,
@@ -842,6 +854,7 @@
 				023B19591A3BA90D0067FB81 /* RLMListBase.h in Headers */,
 				0207AB81195DF9FB007EFB12 /* RLMMigration.h in Headers */,
 				0207AB7F195DF9FB007EFB12 /* RLMMigration_Private.h in Headers */,
+				3FC1F3D81B20C003009C92E3 /* RLMNotification.hpp in Headers */,
 				E81A1F961955FC9300FDED82 /* RLMObject.h in Headers */,
 				29EDB8DE1A7705EB00458D80 /* RLMObject_Private.h in Headers */,
 				3F171CB01AF0579C00986326 /* RLMObject_Private.hpp in Headers */,
@@ -1231,6 +1244,7 @@
 				29E3C70B1A71C1C700B62C1D /* RLMConstants.m in Sources */,
 				29E3C7151A71C1C700B62C1D /* RLMListBase.m in Sources */,
 				29E3C70C1A71C1C700B62C1D /* RLMMigration.mm in Sources */,
+				3FC1F3DD1B20C003009C92E3 /* RLMNotification.mm in Sources */,
 				29E3C70D1A71C1C700B62C1D /* RLMObject.mm in Sources */,
 				29E3C7191A71C1C700B62C1D /* RLMObjectBase.mm in Sources */,
 				29E3C70E1A71C1C700B62C1D /* RLMObjectSchema.mm in Sources */,
@@ -1295,6 +1309,7 @@
 				E856D1FB1956154C00FB2FCF /* RLMConstants.m in Sources */,
 				023B195D1A3BA90D0067FB81 /* RLMListBase.m in Sources */,
 				0207AB84195DF9FB007EFB12 /* RLMMigration.mm in Sources */,
+				3FC1F3DC1B20C003009C92E3 /* RLMNotification.mm in Sources */,
 				E856D1FE1956154C00FB2FCF /* RLMObject.mm in Sources */,
 				023B19631A3BA90E0067FB81 /* RLMObjectBase.mm in Sources */,
 				E856D2011956154C00FB2FCF /* RLMObjectSchema.mm in Sources */,
@@ -1351,6 +1366,7 @@
 				E81A1F931955FC9300FDED82 /* RLMConstants.m in Sources */,
 				023B195C1A3BA90D0067FB81 /* RLMListBase.m in Sources */,
 				0207AB83195DF9FB007EFB12 /* RLMMigration.mm in Sources */,
+				3FC1F3DB1B20C003009C92E3 /* RLMNotification.mm in Sources */,
 				E81A1F971955FC9300FDED82 /* RLMObject.mm in Sources */,
 				023B19621A3BA90E0067FB81 /* RLMObjectBase.mm in Sources */,
 				E81A1F9B1955FC9300FDED82 /* RLMObjectSchema.mm in Sources */,

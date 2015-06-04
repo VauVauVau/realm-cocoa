@@ -17,9 +17,11 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #import "RLMArray_Private.hpp"
-#import "RLMObject_Private.hpp"
+
+#import "RLMNotification.hpp"
 #import "RLMObjectSchema_Private.hpp"
 #import "RLMObjectStore.h"
+#import "RLMObject_Private.hpp"
 #import "RLMProperty_Private.h"
 #import "RLMQueryUtil.hpp"
 #import "RLMRealm_Private.hpp"
@@ -35,7 +37,7 @@
     realm::LinkViewRef _backingLinkView;
     RLMRealm *_realm;
     __unsafe_unretained RLMObjectSchema *_objectSchema;
-    std::unique_ptr<RLMObservationInfo2> _observable;
+    std::unique_ptr<RLMObservationInfo> _observable;
 }
 
 + (RLMArrayLinkView *)arrayWithObjectClassName:(NSString *)objectClassName
@@ -77,19 +79,21 @@ static inline void RLMValidateObjectClass(__unsafe_unretained RLMObjectBase *con
     }
 }
 
-static const RLMObservationInfo2 *getObservable(__unsafe_unretained RLMArrayLinkView *const ar, bool create = false) {
+static const RLMObservationInfo *getObservable(__unsafe_unretained RLMArrayLinkView *const ar, bool create = false) {
     if (ar->_observable) {
         return ar->_observable.get();
     }
 
-    for (const RLMObservationInfo2 *info : ar->_objectSchema->_observedObjects) {
+    for (const RLMObservationInfo *info : ar->_objectSchema->_observedObjects) {
         if (info->row.get_index() == ar->_backingLinkView->get_origin_row_index()) {
             return info;
         }
     }
 
     if (create) {
-        ar->_observable = std::make_unique<RLMObservationInfo2>(ar->_objectSchema, ar->_backingLinkView->get_origin_row_index(), ar);
+        ar->_observable = std::make_unique<RLMObservationInfo>(ar->_objectSchema,
+                                                               ar->_backingLinkView->get_origin_row_index(),
+                                                               ar);
         return ar->_observable.get();
     }
 
@@ -404,7 +408,7 @@ static void changeArray(__unsafe_unretained RLMArrayLinkView *const ar, NSKeyVal
             options:(NSKeyValueObservingOptions)options
             context:(void *)context {
     if (!_observable && [keyPath isEqualToString:@"invalidated"]) {
-        _observable = std::make_unique<RLMObservationInfo2>(_objectSchema, _backingLinkView->get_origin_row_index(), self);
+        _observable = std::make_unique<RLMObservationInfo>(_objectSchema, _backingLinkView->get_origin_row_index(), self);
     }
     [super addObserver:observer forKeyPath:keyPath options:options context:context];
 }

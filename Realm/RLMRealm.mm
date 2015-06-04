@@ -20,6 +20,7 @@
 
 #import "RLMArray_Private.hpp"
 #import "RLMMigration_Private.h"
+#import "RLMNotification.hpp"
 #import "RLMObjectSchema_Private.hpp"
 #import "RLMObjectStore.h"
 #import "RLMObject_Private.h"
@@ -669,7 +670,7 @@ struct ObserverState {
     size_t row;
     size_t column;
     NSString *key;
-    RLMObservationInfo2 *observable;
+    RLMObservationInfo *observable;
 
     bool changed = false;
     bool multipleLinkviewChanges = false;
